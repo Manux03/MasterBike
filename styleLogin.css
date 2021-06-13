@@ -19,3 +19,17 @@ body {
     background-color: rgba(250,250,250, 0.7);
     align-items: center !important;
 }
+
+.form-group small {
+    visibility: hidden;
+}
+
+.error small{
+    color: red;
+    visibility: visible;
+}
+
+/*usado para cambiar el tag small para que muestre que está correcto en registro.html*/
+.correcto small {
+    color: green;
+    visibility: visible;}
