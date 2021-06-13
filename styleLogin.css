@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700,800,900&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins',sans-serif;
+}
+
+body {
+    background-image: url(images/Bicicleta.jpg);
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.login-items{
+    background-color: rgba(250,250,250, 0.7);
+    align-items: center !important;
+}
