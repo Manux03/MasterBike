@@ -4,19 +4,14 @@
 //darle constantes a los elementos de formulario
 const formu = document.getElementById("formulario");
 const nombre = document.getElementById("nombre");
-const rut = document.getElementById("rut");
 const email = document.getElementById("email");
-const fecha = document.getElementById("fecha_nac");
 const contra1 = document.getElementById("password");
 const contra2 = document.getElementById("validate-password");
-const telef = document.getElementById("telefono");
-const coment = document.getElementById("comentario");
 const apellido = document.getElementById("apellido");
 const usuario = document.getElementById("usuario");
 
 
 //regex para validar rut
-const regexRut = new RegExp('([0-9]{8})+[-]+[0-9/k/K]{1}');
 const regexEmail = new RegExp("[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)");
 const regexTelef = new RegExp("[0-9]{9}")
 
@@ -29,13 +24,9 @@ formu.addEventListener('submit', (e) =>{
 function revisarCampos() {
     //conseguir valores de los Campo:
     const nombreValor = nombre.value.trim();
-    const rutValor = rut.value.trim();
     const emailValor = email.value.trim();
-    const fechaValor = fecha.value;
     const contra1Valor = contra1.value;
     const contra2Valor = contra2.value;
-    const telefValor = telef.value.replace(/ /g, "");
-    const comentValor = coment.value.trim();
     const apellidoValor = apellido.value.trim();
     const usuarioValor = usuario.value.trim();
 
@@ -114,33 +105,4 @@ function afirmarCorrecto (campo) {
 
     divPadre.classList.add("correcto");
     small.style = 'color: green;'
-}
-
-
-//FUNCION QUE PIDEN DEL RUT
-
-rut.addEventListener('keyup', (e) =>{
-    revisarCaracteres();
-});
-
-function revisarCaracteres () {
-    const rutNumero = rut.value.trim();
-    let caracteresFaltantes = 10 - rutNumero.length;
-    const divPadre = rut.parentElement;
-    const small = divPadre.querySelector("small");
-
-    if (caracteresFaltantes >= 1) {
-        small.innerText = 'Faltan '+caracteresFaltantes +' caracteres.';
-        divPadre.classList.add("error");
-        small.style = 'color: red;';
-    } else if (caracteresFaltantes == 0) {
-        small.innerText = 'Número de caracteres correcto';
-        divPadre.classList.add("correcto");
-        small.style = 'color: green;';
-    } else {
-        small.innerText = 'Te excediste con el número de caracteres, tienen que ser 10';
-        divPadre.classList.add("error");
-        small.style = 'color: red;';
-    }
-
 }
